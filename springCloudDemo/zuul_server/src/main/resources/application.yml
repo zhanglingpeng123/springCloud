@@ -1,0 +1,46 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:18761/eureka/
+feign:
+  hystrix:
+    enabled: true
+
+server:
+  port: 18764
+spring:
+  application:
+    name: zuul_service
+
+zuul:
+  routes:
+    service-hi:
+      path: /api/user/**
+      stripPrefix: false
+  #统一入口为上面的配置，其他入口忽略
+  ignored-patterns: /*-service/**
+
+##自定义路由映射
+#zuul:
+#  routes:
+#    service-hi: /user/**
+#  #统一入口为上面的配置，其他入口忽略
+#  ignored-patterns: /*-service/**
+
+
+  #数据库连接配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#mybatis的相关配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.lianxi.eurekaclient1.entity
+  #开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true
+
