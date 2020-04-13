@@ -15,7 +15,7 @@ spring:
 zuul:
   routes:
     service-hi:
-      path: /api/user/**
+      path: /api/**
       stripPrefix: false
   #统一入口为上面的配置，其他入口忽略
   ignored-patterns: /*-service/**
