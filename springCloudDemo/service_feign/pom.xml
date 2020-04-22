@@ -37,6 +37,8 @@
             </exclusions>
         </dependency>
 
+
+
         <!-- 使用Apache HttpClient替换Feign原生httpclient -->
         <!--<dependency>-->
             <!--<groupId>org.apache.httpcomponents</groupId>-->
@@ -49,6 +51,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+        <!--整合freemarke-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
     </dependencies>
 
